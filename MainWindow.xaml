@@ -7,6 +7,65 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Reuel's Jank AF Text Editor"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" FontWeight="Bold" FontSize="24"
+               
+               />
+
+        <Button 
+            x:Name="btnUndo" 
+            Content="Undo"
+            Padding="10,5"
+            Grid.Column="1" Grid.Row="0" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnUndo_Click"/>
+
+        <Button 
+            IsEnabled="False"
+            x:Name="btnRedo" 
+            Content="Redo"
+            Padding="10,5"
+            Grid.Column="2" Grid.Row="0" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnRedo_Click"/>
+        
+        <Button 
+            x:Name="btnSave" 
+            Content="Save"
+            Padding="10,5"
+            Grid.Column="3" Grid.Row="0" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnSave_Click"/>
+        
+        
+        <TextBox 
+            x:Name="txbContent"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Grid.ColumnSpan="4"
+            Grid.Row="1" 
+            Margin="10, 5"
+            TextWrapping="Wrap" 
+            AcceptsReturn="True" 
+            AcceptsTab="True" 
+             KeyUp="txbContent_KeyUp"/>
+
+        <Label 
+            x:Name="lblStatus"
+            Grid.Row="2"
+            Grid.ColumnSpan="4"
+            Margin="10,0"
+            Content="Status"/>
 
     </Grid>
 </Window>
